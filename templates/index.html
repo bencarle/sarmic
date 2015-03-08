@@ -1,0 +1,265 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sarah & Michael</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom Theme CSS -->
+    <link href="{% static 'css/wedding.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">
+                    S <span class="light">&amp;</span> M
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from info link when scrolled up past info section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#location">Location</a>
+                    </li>
+                    <li>
+		        <a href="#" data-toggle="popover" data-placement="bottom" class="lodging" id="lodging">Lodging</a>
+                    </li> 
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+		      <a href="#" data-toggle="modal" data-target="#guestMapModal" class="mapModalLink" title="Map">Guest Map</a>
+                    </li>
+                    <li>
+                        <a href="https://thankfulregistry.com/sarahandmichael" target="_blank">Registry</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section id="intro">
+        <div id="intro-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="intro-heading">Sarah & Michael</h1>
+		      <p class="intro-text">May 16, 2015</p>
+                        <div class="page-scroll">
+                            <a href="#location" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="content-section text-center">
+        <div class="section-inner" id="location-inner">
+	    <div class="container">
+	        <div class="row">
+		    <div class="col-xs-6 col-sm-6">
+		      <h2 class="section-heading">Saturday, May 16<br>5:00 pm</h2>
+		    </div>
+		</div>
+	        <div class="row">		    
+		    <div class="col-xs-6 col-sm-3" id="location-address">
+		      <address>
+		      <strong>Buttermilk Falls Inn & Spa</strong><br>
+		      220 North Road<br>Milton, NY 12547<br>
+		      <abbr title="Phone">Phone:</abbr> (845) 795-1310
+		      </address>
+		      <div class="notice">Please note that some events will be held outdoors;<br>appropriate footwear is recommended.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--
+    <section id="events" class="content-section text-center">
+        <div class="section-inner" id="events-inner">
+	  <h2 class="section-heading">Events</h2>
+	    <div class="container">
+                <div class="col-xs-12 col-sm-8 events-info-section">
+		  <h3 class="section-sub-heading" style="margin-bottom: 0px;">Donovan House</h3>
+		  <div class="row" style="margin-top: 0px;">
+		    <div class="col-xs-4 events events-left">
+		      <a href="#" data-toggle="modal" data-target="#eventsPhoto" class="eventsThumbnail" title="Donovan House Exterior">
+			<img src="{% static 'img/events/donovan-outside.jpg' %}" class="img-responsive thumbnail" alt="" />
+		      </a>
+		    </div>
+		    <div class="col-xs-4">
+		      <address>
+		      1155 14th St NW<br>
+		      Washington, DC 20005<br>
+		      <abbr title="Phone">P:</abbr> (202) 737-1200
+		      </address>
+		      <a class="btn btn-default" href="https://gc.synxis.com/rez.aspx?Hotel=56825&Chain=10179&arrive=12/12/2014&depart=12/14/2014&adult=1&child=0&group=12122014EC" target="_blank">Room Block</a>
+		    </div>
+		    <div class="col-xs-4 events">
+		      <a  href="#" data-toggle="modal" data-target="#eventsPhoto" class="eventsThumbnail" title="Donovan House Interior">
+		      <img src="{% static 'img/events/donovan-inside.jpg' %}" class="img-responsive thumbnail" alt="" />
+		      </a>
+		    </div>
+		  </div>
+		  <h3 class="section-sub-heading residence-title" style="margin-bottom: 0px;">Residence Inn</h3>
+		  <div class="row" style="margin-top: 0px;">
+		    <div class="col-xs-4 events events-left">
+		      <a href="#" data-toggle="modal" data-target="#eventsPhoto" class="eventsThumbnail" title="Residence Inn Exterior">
+		      <img src="{% static 'img/events/residence-outside.jpg' %}" class="img-responsive thumbnail" alt="" />
+		      </a>
+		    </div>		    
+		    <div class="col-xs-4">
+		      <address>
+		      1199 Vermont Ave NW<br>
+		      Washington, DC 20005<br>
+		      <abbr title="Phone">P:</abbr> (202) 898-1100
+		      </address>
+		      <a class="btn btn-default" href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Eastham/Carle%20Wedding%20Room%20Block%20Dec2014%5EWASDC%60ECWECWA%7CECWECWB%60139.00-169.00%60USD%60false%6012/12/14%6012/14/14%6011/14/2014&app=resvlink&stop_mobi=yes" target="_blank">Room Block</a>
+		    </div>
+		    <div class="col-xs-4 events">
+		      <a href="#" data-toggle="modal" data-target="#eventsPhoto" class="eventsThumbnail" title="Residence Inn Interior">
+		      <img src="{% static 'img/events/residence-inside.jpg' %}" class="img-responsive thumbnail" alt="" />
+		      </a>
+		    </div>		    
+		  </div>
+                </div>
+		<div class="col-sm-4 hidden-xs events-map-section">
+		  <div id="eventsMap" class="inset-map"></div>
+		</div>
+	    </div>
+        </div>
+    </section>
+-->
+
+    <section id="contact" class="content-section text-center">
+	<div class="section-inner" id="contact-inner">
+	  <div id="contact-content">
+	    <button type="button" class="btn btn-contact" data-toggle="modal" data-target="#contactModal"></button>
+	  </div>
+	</div>
+    </section>
+	
+<!-- Contact Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="Contact" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 id="contact-modal-title" class="modal-title">Contact Us</h4>
+      </div>
+      <div id="contact-modal-body" class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>	
+
+<!-- Photo Modal -->
+<div class="modal fade" id="eventsPhoto" tabindex="-1" role="dialog" aria-labelledby="Events Photo" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 id="photo-modal-title" class="modal-title">Events Photo</h4>
+      </div>
+      <div id="photo-modal-body" class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>	
+
+<!-- Map Modal -->
+<div class="modal fade" id="guestMapModal" tabindex="-1" role="dialog" aria-labelledby="Map" aria-hidden="true">
+  <div class="modal-dialog" id="guestMapModalDialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Map</h4>
+      </div>
+      <div class="modal-body">
+        <div id="guestMap" class=""></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>	
+
+<div id="lodging-head" class="hide">Lookup&nbsp;Your&nbsp;Lodging&nbsp;Information</div>
+<div id="lodging-content" class="hide">
+  <!--
+  <form role="form" data-async data-target="#lodging-content" action="/lodging" class="lodging">
+  <div class="form-group lodgingForm">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" name="email" id="email" value="" placeholder="Enter email">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  -->
+  <div class="note">Please check back later for detailed lodging information.</div>
+</div>	
+
+    <!-- Core JavaScript Files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	
+	<!-- Google Maps API Key - You will need to use your own API
+	key to use the map feature -->
+	<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbteM3jyXy1enozo4tB_0f1UabHYJ03F0&sensor=false&libraries=places"></script>
+	
+<script type="text/javascript">
+function markGuestMap() {
+    /*guestMap.setCenter(new google.maps.LatLng({{latC}}, {{lngC}}));*/
+{% for guest in guests %}
+    {% if guest.locached and guest.attending > 0 %}
+    markGuest({{ guest.lat }}, {{ guest.lng }}, "{{ guest.name }}");
+    {% endif %}
+{% endfor %}
+}
+</script>
+
+	<script src="{% static 'js/wedding.js' %}"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,13 @@
+	<form class="contact" role="form" data-async data-target="#contact-modal-body" action="/contact/" method="post">{% csrf_token %}
+	{{ form.non_field_errors }}
+          <div class="form-group">
+	    {{ form.name.errors }}{{ form.name.label_tag }} {{ form.name }}
+	  </div>
+	  <div class="form-group">
+	    {{ form.email.errors }}{{ form.email.label_tag }} {{ form.email }}
+	  </div>
+	  <div class="form-group">
+	    {{ form.message.errors }}{{ form.message.label_tag }} {{ form.message }}
+	  </div>
+	<button type="submit" class="btn btn-default">Submit</button>
+	  </form>

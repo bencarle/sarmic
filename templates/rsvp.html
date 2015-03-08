@@ -1,0 +1,36 @@
+<form role="form" data-async data-target="#rsvp-content" action="/rsvp/" method="post" class="rsvp">{% csrf_token %}
+  <input type="hidden" class="form-control" name="id" id="id" value="{{ guest.id }}" readonly>
+  <div class="form-group rsvpForm">
+      <label for="name">Your Place Card Title</label>
+      <input type="text" class="form-control" name="name" id="name" value="{{ guest.name }}" readonly>
+  </div>
+  <div class="form-group rsvpForm">
+      <label for="dist">You will be traveling</label>
+      <input type="text" class="form-control" name="dist" id="dist" value="{{ dist }} miles" readonly>
+  </div>
+  <div class="form-group rsvpForm">
+  {% if dist > 20 %}
+    Wow! We really appreciate it!
+  {% else %}
+    We really appreciate it!
+  {% endif %}
+  </div>
+  <div class="form-group rsvpForm {{ attendingValidationState }}">
+    <label for="attending">Please tell us how many people will be attending</label>
+    <select class="form-control" name="attending" id="attending">
+      {% for sel in sellist %}
+      <option value="{{ forloop.counter0 }}" {{ sel }}>{{ forloop.counter0 }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group rsvpForm {{ commentValidationState }}">
+    <label for="comment">Any Comments?  (Did we misspell your name?)</label>
+    <textarea class="form-control" rows="3" name="comment" id="comment">{{ guest.comment }}</textarea>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <button type="submit" class="btn {{ buttonType }}">Save</button>
+    </div>
+    <div class="col-sm-10 rsvpForm {{ statusClass }}">{{ statusMsg }}</div>
+  </div>
+</form>
